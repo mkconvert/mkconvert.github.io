@@ -340,6 +340,147 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#plain" class="md-nav__link">
+    Plain
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-default" class="md-nav__link">
+    Simple (default)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#github" class="md-nav__link">
+    GitHub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grid" class="md-nav__link">
+    Grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fancy-grid" class="md-nav__link">
+    Fancy Grid
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pipe" class="md-nav__link">
+    Pipe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orgtbl" class="md-nav__link">
+    OrgTbl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira" class="md-nav__link">
+    Jira
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#presto" class="md-nav__link">
+    Presto
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pretty" class="md-nav__link">
+    Pretty
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#psql" class="md-nav__link">
+    Psql
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#restructuredtext" class="md-nav__link">
+    reStructuredText
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mediawiki" class="md-nav__link">
+    MediaWiki
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moinmoin" class="md-nav__link">
+    MoinMoin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#youtrack" class="md-nav__link">
+    Youtrack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#html" class="md-nav__link">
+    HTML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#latex" class="md-nav__link">
+    Latex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textile" class="md-nav__link">
+    Textile
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tsv" class="md-nav__link">
+    TSV
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -352,7 +493,207 @@
                 
                 
                 <h1 id="table-format-examples">Table Format Examples</h1>
-<p>Blah</p>
+<p>This page contains examples of all available output formats. You can specify the required format using the
+<a href="../convert/#table-tablefmt">table-tablefmt</a> query parameter.</p>
+<h2 id="plain">Plain</h2>
+<p>Plain tables do not use any pseudo-graphics to draw lines.</p>
+<div class="highlight"><pre><span></span><code>Pokemon    Type        Number
+Venusaur   Grass            <span class="m">3</span>
+Charizard  Fire             <span class="m">6</span>
+Blastoise  Water            <span class="m">9</span>
+Pikachu    Electric        <span class="m">25</span>
+</code></pre></div>
+<h2 id="simple-default">Simple (default)</h2>
+<p>Simple corresponds to simple_tables in <a href="https://pandoc.org/MANUAL.html#tables">Pandoc Markdown extensions</a>.</p>
+<div class="highlight"><pre><span></span><code>Pokemon    Type        Number
+---------  --------  --------
+Venusaur   Grass            <span class="m">3</span>
+Charizard  Fire             <span class="m">6</span>
+Blastoise  Water            <span class="m">9</span>
+Pikachu    Electric        <span class="m">25</span>
+</code></pre></div>
+<h2 id="github">GitHub</h2>
+<p>GitHub follows the conventions of GitHub flavored Markdown. It corresponds to the pipe format without alignment colons.</p>
+<div class="highlight"><pre><span></span><code><span class="p">|</span> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number <span class="p">|</span>
+<span class="p">|</span>-----------<span class="p">|</span>----------<span class="p">|</span>----------<span class="p">|</span>
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
+</code></pre></div>
+<h2 id="grid">Grid</h2>
+<p>Grid is like tables formatted by Emacs' <a href="http://table.sourceforge.net">table.el</a> package.
+It corresponds to grid_tables in <a href="https://pandoc.org/MANUAL.html#tables">Pandoc Markdown extensions</a>.</p>
+<div class="highlight"><pre><span></span><code>+-----------+----------+----------+
+<span class="p">|</span> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number <span class="p">|</span>
++<span class="o">===========</span>+<span class="o">==========</span>+<span class="o">==========</span>+
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
++-----------+----------+----------+
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
++-----------+----------+----------+
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
++-----------+----------+----------+
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
++-----------+----------+----------+
+</code></pre></div>
+<h2 id="fancy-grid">Fancy Grid</h2>
+<p>Fancy Grid draws a grid using box-drawing characters.</p>
+<div class="highlight"><pre><span></span><code>╒═══════════╤══════════╤══════════╕
+│ Pokemon   │ Type     │   Number │
+╞═══════════╪══════════╪══════════╡
+│ Venusaur  │ Grass    │        <span class="m">3</span> │
+├───────────┼──────────┼──────────┤
+│ Charizard │ Fire     │        <span class="m">6</span> │
+├───────────┼──────────┼──────────┤
+│ Blastoise │ Water    │        <span class="m">9</span> │
+├───────────┼──────────┼──────────┤
+│ Pikachu   │ Electric │       <span class="m">25</span> │
+╘═══════════╧══════════╧══════════╛
+</code></pre></div>
+<h2 id="pipe">Pipe</h2>
+<p>Pipe follows the conventions of <a href="http://michelf.ca/projects/php-markdown/extra/#table">PHP Markdown Extra</a> extension.
+It corresponds to pipe_tables in Pandoc. This format uses colons to indicate column alignment.</p>
+<div class="highlight"><pre><span></span><code><span class="p">|</span> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number <span class="p">|</span>
+<span class="p">|</span>:----------<span class="p">|</span>:---------<span class="p">|</span>---------:<span class="p">|</span>
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
+</code></pre></div>
+<h2 id="orgtbl">OrgTbl</h2>
+<p>OrgTbl follows the conventions of Emacs <a href="http://orgmode.org/manual/Tables.html">org-mode</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="p">|</span> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number <span class="p">|</span>
+<span class="p">|</span>-----------+----------+----------<span class="p">|</span>
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
+</code></pre></div>
+<h2 id="jira">Jira</h2>
+<p>Jira follows the conventions of Atlassian Jira markup language.</p>
+<div class="highlight"><pre><span></span><code><span class="o">||</span> Pokemon   <span class="o">||</span> Type     <span class="o">||</span>   Number <span class="o">||</span>
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
+</code></pre></div>
+<h2 id="presto">Presto</h2>
+<p>Presto is like tables formatted by Presto cli.</p>
+<div class="highlight"><pre><span></span><code> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number
+-----------+----------+----------
+ Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span>
+ Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span>
+ Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span>
+ Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span>
+</code></pre></div>
+<h2 id="pretty">Pretty</h2>
+<p>Pretty attempts to be close to the format emitted by the PrettyTables library.</p>
+<div class="highlight"><pre><span></span><code>+-----------+----------+--------+
+<span class="p">|</span>  Pokemon  <span class="p">|</span>   Type   <span class="p">|</span> Number <span class="p">|</span>
++-----------+----------+--------+
+<span class="p">|</span> Venusaur  <span class="p">|</span>  Grass   <span class="p">|</span>   <span class="m">3</span>    <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span>   Fire   <span class="p">|</span>   <span class="m">6</span>    <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span>  Water   <span class="p">|</span>   <span class="m">9</span>    <span class="p">|</span>
+<span class="p">|</span>  Pikachu  <span class="p">|</span> Electric <span class="p">|</span>   <span class="m">25</span>   <span class="p">|</span>
++-----------+----------+--------+
+</code></pre></div>
+<h2 id="psql">Psql</h2>
+<p>Psql is like tables formatted by Postgres' psql cli.</p>
+<div class="highlight"><pre><span></span><code>+-----------+----------+----------+
+<span class="p">|</span> Pokemon   <span class="p">|</span> Type     <span class="p">|</span>   Number <span class="p">|</span>
+<span class="p">|</span>-----------+----------+----------<span class="p">|</span>
+<span class="p">|</span> Venusaur  <span class="p">|</span> Grass    <span class="p">|</span>        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span> Charizard <span class="p">|</span> Fire     <span class="p">|</span>        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span> Blastoise <span class="p">|</span> Water    <span class="p">|</span>        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span> Pikachu   <span class="p">|</span> Electric <span class="p">|</span>       <span class="m">25</span> <span class="p">|</span>
++-----------+----------+----------+
+</code></pre></div>
+<h2 id="restructuredtext">reStructuredText</h2>
+<p>reStructuredText formats data like a simple table of the <a href="https://pypi.org/project/tabulate/#:~:text=formats%20data%20like%20a%20simple%20table%20of%20the%20reStructuredText%20format">reStructuredText format</a>.</p>
+<div class="highlight"><pre><span></span><code><span class="o">=========</span>  <span class="o">========</span>  <span class="o">========</span>
+Pokemon    Type        <span class="nv">Number</span>
+<span class="o">=========</span>  <span class="o">========</span>  <span class="o">========</span>
+Venusaur   Grass            <span class="m">3</span>
+Charizard  Fire             <span class="m">6</span>
+Blastoise  Water            <span class="m">9</span>
+Pikachu    Electric        <span class="nv">25</span>
+<span class="o">=========</span>  <span class="o">========</span>  <span class="o">========</span>
+</code></pre></div>
+<h2 id="mediawiki">MediaWiki</h2>
+<p>MediaWiki format produces a table markup used in <a href="https://pypi.org/project/tabulate/#:~:text=format%20produces%20a%20table%20markup%20used%20in%20Wikipedia%20and%20on%20other%20MediaWiki-based%20sites">Wikipedia</a> and on other MediaWiki-based sites.</p>
+<div class="highlight"><pre><span></span><code><span class="o">{</span><span class="p">|</span> <span class="nv">class</span><span class="o">=</span><span class="s2">&quot;wikitable&quot;</span> <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: left;&quot;</span>
+<span class="p">|</span>+ &lt;!-- caption --&gt;
+<span class="p">|</span>-
+! Pokemon   !! Type     !! <span class="nv">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">|</span>   Number
+<span class="p">|</span>-
+<span class="p">|</span> Venusaur  <span class="o">||</span> Grass    <span class="o">||</span> <span class="nv">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">|</span>        <span class="m">3</span>
+<span class="p">|</span>-
+<span class="p">|</span> Charizard <span class="o">||</span> Fire     <span class="o">||</span> <span class="nv">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">|</span>        <span class="m">6</span>
+<span class="p">|</span>-
+<span class="p">|</span> Blastoise <span class="o">||</span> Water    <span class="o">||</span> <span class="nv">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">|</span>        <span class="m">9</span>
+<span class="p">|</span>-
+<span class="p">|</span> Pikachu   <span class="o">||</span> Electric <span class="o">||</span> <span class="nv">align</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">|</span>       <span class="m">25</span>
+<span class="p">|</span><span class="o">}</span>
+</code></pre></div>
+<h2 id="moinmoin">MoinMoin</h2>
+<p>MoinMoin format produces a table markup used in <a href="https://pypi.org/project/tabulate/#:~:text=format%20produces%20a%20table%20markup%20used%20in%20MoinMoin%20wikis">MoinMoin</a> wikis.</p>
+<div class="highlight"><pre><span></span><code><span class="o">||</span> <span class="s1">&#39;&#39;&#39; Pokemon   &#39;&#39;&#39;</span> <span class="o">||</span> <span class="s1">&#39;&#39;&#39; Type     &#39;&#39;&#39;</span> <span class="o">||</span>&lt;<span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt; <span class="s1">&#39;&#39;&#39;   Number &#39;&#39;&#39;</span> <span class="o">||</span>
+<span class="o">||</span>  Venusaur   <span class="o">||</span>  Grass     <span class="o">||</span>&lt;<span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;         <span class="m">3</span>  <span class="o">||</span>
+<span class="o">||</span>  Charizard  <span class="o">||</span>  Fire      <span class="o">||</span>&lt;<span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;         <span class="m">6</span>  <span class="o">||</span>
+<span class="o">||</span>  Blastoise  <span class="o">||</span>  Water     <span class="o">||</span>&lt;<span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;         <span class="m">9</span>  <span class="o">||</span>
+<span class="o">||</span>  Pikachu    <span class="o">||</span>  Electric  <span class="o">||</span>&lt;<span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;        <span class="m">25</span>  <span class="o">||</span>
+</code></pre></div>
+<h2 id="youtrack">Youtrack</h2>
+<p>Youtrack format produces a table markup used in Youtrack tickets.</p>
+<div class="highlight"><pre><span></span><code><span class="o">||</span>  Pokemon    <span class="o">||</span>  Type      <span class="o">||</span>    Number  <span class="o">||</span>
+<span class="p">|</span>  Venusaur   <span class="p">|</span>  Grass     <span class="p">|</span>         <span class="m">3</span>  <span class="p">|</span>
+<span class="p">|</span>  Charizard  <span class="p">|</span>  Fire      <span class="p">|</span>         <span class="m">6</span>  <span class="p">|</span>
+<span class="p">|</span>  Blastoise  <span class="p">|</span>  Water     <span class="p">|</span>         <span class="m">9</span>  <span class="p">|</span>
+<span class="p">|</span>  Pikachu    <span class="p">|</span>  Electric  <span class="p">|</span>        <span class="m">25</span>  <span class="p">|</span>
+</code></pre></div>
+<h2 id="html">HTML</h2>
+<p>HTML produces standard HTML markup as an html.escape'd string. The Unsafe HTML table format can be used if unescaped HTML is required.</p>
+<div class="highlight"><pre><span></span><code>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;Pokemon  &lt;/th&gt;&lt;th&gt;Type    &lt;/th&gt;&lt;th <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;  Number&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;Venusaur &lt;/td&gt;&lt;td&gt;Grass   &lt;/td&gt;&lt;td <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;       <span class="m">3</span>&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Charizard&lt;/td&gt;&lt;td&gt;Fire    &lt;/td&gt;&lt;td <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;       <span class="m">6</span>&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Blastoise&lt;/td&gt;&lt;td&gt;Water   &lt;/td&gt;&lt;td <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;       <span class="m">9</span>&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt;Pikachu  &lt;/td&gt;&lt;td&gt;Electric&lt;/td&gt;&lt;td <span class="nv">style</span><span class="o">=</span><span class="s2">&quot;text-align: right;&quot;</span>&gt;      <span class="m">25</span>&lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre></div>
+<h2 id="latex">Latex</h2>
+<p>Latex format creates a tabular environment for LaTeX markup, replacing special characters like _ or \ to their LaTeX correspondents.</p>
+<div class="highlight"><pre><span></span><code><span class="se">\b</span>egin<span class="o">{</span>tabular<span class="o">}{</span>llr<span class="o">}</span>
+<span class="se">\h</span>line
+ Pokemon   <span class="p">&amp;</span> Type     <span class="p">&amp;</span>   Number <span class="se">\\</span>
+<span class="se">\h</span>line
+ Venusaur  <span class="p">&amp;</span> Grass    <span class="p">&amp;</span>        <span class="m">3</span> <span class="se">\\</span>
+ Charizard <span class="p">&amp;</span> Fire     <span class="p">&amp;</span>        <span class="m">6</span> <span class="se">\\</span>
+ Blastoise <span class="p">&amp;</span> Water    <span class="p">&amp;</span>        <span class="m">9</span> <span class="se">\\</span>
+ Pikachu   <span class="p">&amp;</span> Electric <span class="p">&amp;</span>       <span class="m">25</span> <span class="se">\\</span>
+<span class="se">\h</span>line
+<span class="se">\e</span>nd<span class="o">{</span>tabular<span class="o">}</span>
+</code></pre></div>
+<h2 id="textile">Textile</h2>
+<p>Textile format produces a table markup used in <a href="https://pypi.org/project/tabulate/#:~:text=format%20produces%20a%20table%20markup%20used%20in%20Textile%20format%3A">Textile</a> format.</p>
+<div class="highlight"><pre><span></span><code><span class="p">|</span>_.  Pokemon   <span class="p">|</span>_. Type     <span class="p">|</span>_.   Number <span class="p">|</span>
+<span class="p">|</span>&lt;. Venusaur   <span class="p">|</span>&lt;. Grass    <span class="p">|</span>&gt;.        <span class="m">3</span> <span class="p">|</span>
+<span class="p">|</span>&lt;. Charizard  <span class="p">|</span>&lt;. Fire     <span class="p">|</span>&gt;.        <span class="m">6</span> <span class="p">|</span>
+<span class="p">|</span>&lt;. Blastoise  <span class="p">|</span>&lt;. Water    <span class="p">|</span>&gt;.        <span class="m">9</span> <span class="p">|</span>
+<span class="p">|</span>&lt;. Pikachu    <span class="p">|</span>&lt;. Electric <span class="p">|</span>&gt;.       <span class="m">25</span> <span class="p">|</span>
+</code></pre></div>
+<h2 id="tsv">TSV</h2>
+<p>TSV format produces a table using <a href="https://en.wikipedia.org/wiki/Tab-separated_values">Tab-Separated Values</a>.</p>
+<div class="highlight"><pre><span></span><code>Pokemon         Type              Number
+Venusaur        Grass                  <span class="m">3</span>
+Charizard       Fire                   <span class="m">6</span>
+Blastoise       Water                  <span class="m">9</span>
+Pikachu         Electric              <span class="m">25</span>
+</code></pre></div>
                 
               
               
