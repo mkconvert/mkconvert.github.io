@@ -1,0 +1,1061 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+    
+    
+      
+        <title>/convert - MkTable API</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#7e56c2">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../style/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="deep-purple" data-md-color-accent="deep-purple">
+  
+    
+    <script>function __prefix(e){return new URL("..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#convert" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="MkTable API" class="md-header__button md-logo" aria-label="MkTable API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MkTable API
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              /convert
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="MkTable API" class="md-nav__button md-logo" aria-label="MkTable API" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    MkTable API
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/python/" class="md-nav__link">
+        Python Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/nodejs/" class="md-nav__link">
+        Node.js Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/ruby/" class="md-nav__link">
+        Ruby Quickstart
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          API Reference
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="API Reference" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          API Reference
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          /convert
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        /convert
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    Request Body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-parameters" class="md-nav__link">
+    Table Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Table Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-tablefmt" class="md-nav__link">
+    table-tablefmt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-numalign" class="md-nav__link">
+    table-numalign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-stralign" class="md-nav__link">
+    table-stralign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-disable-numparse" class="md-nav__link">
+    table-disable-numparse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-floatfmt" class="md-nav__link">
+    table-floatfmt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-parameters" class="md-nav__link">
+    CSV Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv-sep" class="md-nav__link">
+    csv-sep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-delim-whitespace" class="md-nav__link">
+    csv-delim-whitespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-header" class="md-nav__link">
+    csv-header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-prefix" class="md-nav__link">
+    csv-prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-names" class="md-nav__link">
+    csv-names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-usecols" class="md-nav__link">
+    csv-usecols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skipinitialspace" class="md-nav__link">
+    csv-skipinitialspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skiprows" class="md-nav__link">
+    csv-skiprows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skipfooter" class="md-nav__link">
+    csv-skipfooter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-keep-default-na" class="md-nav__link">
+    csv-keep-default-na
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skip-blank-lines" class="md-nav__link">
+    csv-skip-blank-lines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-body" class="md-nav__link">
+    Request Body
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-parameters" class="md-nav__link">
+    Table Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="Table Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#table-tablefmt" class="md-nav__link">
+    table-tablefmt
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-numalign" class="md-nav__link">
+    table-numalign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-stralign" class="md-nav__link">
+    table-stralign
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-disable-numparse" class="md-nav__link">
+    table-disable-numparse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#table-floatfmt" class="md-nav__link">
+    table-floatfmt
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#csv-parameters" class="md-nav__link">
+    CSV Parameters
+  </a>
+  
+    <nav class="md-nav" aria-label="CSV Parameters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#csv-sep" class="md-nav__link">
+    csv-sep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-delim-whitespace" class="md-nav__link">
+    csv-delim-whitespace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-header" class="md-nav__link">
+    csv-header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-prefix" class="md-nav__link">
+    csv-prefix
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-names" class="md-nav__link">
+    csv-names
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-usecols" class="md-nav__link">
+    csv-usecols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skipinitialspace" class="md-nav__link">
+    csv-skipinitialspace
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skiprows" class="md-nav__link">
+    csv-skiprows
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skipfooter" class="md-nav__link">
+    csv-skipfooter
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-keep-default-na" class="md-nav__link">
+    csv-keep-default-na
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#csv-skip-blank-lines" class="md-nav__link">
+    csv-skip-blank-lines
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="convert">/convert</h1>
+<p>The <code>/convert</code> endpoint accepts requests containing either CSV or JSON data and converts it to a plain text table.</p>
+<div class="admonition warning content-type">
+<p class="admonition-title">Warning</p>
+<p>The <code>Content-Type</code> header <strong><em>must</em></strong> be sent with each request. Use <code>text/plain</code> for CSV data and <code>application/json</code> for JSON.</p>
+</div>
+<h2 id="request-body">Request Body</h2>
+<p>The body of the request should contain the data to be converted. This will either be a string of CSV or JSON data. For example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">CSV Data</label><label for="__tabbed_1_2">JSON Array</label><label for="__tabbed_1_3">JSON Object</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>Pokemon,Type,Number
+Venusaur,Grass,3
+Charizard,Fire,6
+Blastoise,Water,9
+Pikachu,Electric,25
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Pokemon&quot;</span><span class="o">:</span> <span class="s2">&quot;Venusaur&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Grass&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Number&quot;</span><span class="o">:</span> <span class="mf">3</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Pokemon&quot;</span><span class="o">:</span> <span class="s2">&quot;Charizard&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Fire&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Number&quot;</span><span class="o">:</span> <span class="mf">6</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Pokemon&quot;</span><span class="o">:</span> <span class="s2">&quot;Blastoise&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Water&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Number&quot;</span><span class="o">:</span> <span class="mf">9</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;Pokemon&quot;</span><span class="o">:</span> <span class="s2">&quot;Pikachu&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="s2">&quot;Electric&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Number&quot;</span><span class="o">:</span> <span class="mf">25</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+    <span class="s2">&quot;Pokemon&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;row1&quot;</span><span class="o">:</span> <span class="s2">&quot;Venusaur&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row2&quot;</span><span class="o">:</span> <span class="s2">&quot;Charizard&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row3&quot;</span><span class="o">:</span> <span class="s2">&quot;Blastoise&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row4&quot;</span><span class="o">:</span> <span class="s2">&quot;Pikachu&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Type&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;row1&quot;</span><span class="o">:</span> <span class="s2">&quot;Grass&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row2&quot;</span><span class="o">:</span> <span class="s2">&quot;Fire&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row3&quot;</span><span class="o">:</span> <span class="s2">&quot;Water&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;row4&quot;</span><span class="o">:</span> <span class="s2">&quot;Electric&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;Number&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;row1&quot;</span><span class="o">:</span> <span class="mf">3</span><span class="p">,</span>
+        <span class="s2">&quot;row2&quot;</span><span class="o">:</span> <span class="mf">6</span><span class="p">,</span>
+        <span class="s2">&quot;row3&quot;</span><span class="o">:</span> <span class="mf">9</span><span class="p">,</span>
+        <span class="s2">&quot;row4&quot;</span><span class="o">:</span> <span class="mf">25</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="table-parameters">Table Parameters</h2>
+<h3 id="table-tablefmt">table-tablefmt</h3>
+<p>Specifies which flavour of plain text table to convert to.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: simple</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?table-tablefmt<span class="o">=</span>github
+</code></pre></div>
+</div>
+<p>The available options are:</p>
+<ul>
+<li>plain</li>
+<li>simple</li>
+<li>github</li>
+<li>grid</li>
+<li>fancy_grid</li>
+<li>pipe</li>
+<li>orgtbl</li>
+<li>jira</li>
+<li>presto</li>
+<li>pretty</li>
+<li>psql</li>
+<li>rst</li>
+<li>mediawiki</li>
+<li>moinmoin</li>
+<li>youtrack</li>
+<li>html</li>
+<li>unsafehtml</li>
+<li>latex</li>
+<li>latex_raw</li>
+<li>latex_booktabs</li>
+<li>latex_longtable</li>
+<li>textile</li>
+<li>tsv</li>
+</ul>
+<p>For a full list of examples see <a href="../table-examples/">Table Format Examples</a>.</p>
+<h3 id="table-numalign">table-numalign</h3>
+<p>Override the default column alignment for columns identified as containing integers.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: right</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?table-numalign<span class="o">=</span>center
+</code></pre></div>
+</div>
+<p>The available options are:</p>
+<ul>
+<li>right</li>
+<li>center</li>
+<li>left</li>
+<li>decimal</li>
+<li>none (disable alignment)</li>
+</ul>
+<h3 id="table-stralign">table-stralign</h3>
+<p>Override the default column alignment for columns identified as containing strings.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: left</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?table-stralign<span class="o">=</span>center
+</code></pre></div>
+</div>
+<p>The available options are:</p>
+<ul>
+<li>right</li>
+<li>center</li>
+<li>left</li>
+<li>none (disable alignment)</li>
+</ul>
+<h3 id="table-disable-numparse">table-disable-numparse</h3>
+<p>By default, all values which can be parsed as an integer are converted (e.g. <code>"1"</code> is converted to <code>1</code>). Use this option
+to disable this behaviour.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: bool<br>
+<strong>Default</strong>: false</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?table-disable-numparse<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+</div>
+<h3 id="table-floatfmt">table-floatfmt</h3>
+<p>Define custom number formatting applied to all columns containing decimal numbers.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: none</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?table-floatfmt<span class="o">=</span>.4f
+</code></pre></div>
+</div>
+<h2 id="csv-parameters">CSV Parameters</h2>
+<p>The following URL query parameters are available to manipulate CSV data.</p>
+<h3 id="csv-sep">csv-sep</h3>
+<p>The delimeter to use when parsing CSV data.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: <code>','</code></p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-sep<span class="o">=</span><span class="p">|</span>
+</code></pre></div>
+</div>
+<h3 id="csv-delim-whitespace">csv-delim-whitespace</h3>
+<p>Specifies whether or not whitespace (e.g. <code>' '</code>) should be used as the delimiter when parsing CSV data.
+Cannot be used with <code>csv-sep</code>.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: bool<br>
+<strong>Default</strong>: false</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-delim-whitespace<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+</div>
+<h3 id="csv-header">csv-header</h3>
+<p>Row number to use as the column names. Specify <code>none</code> if your CSV data does not have a header row and each column
+will use its index as a header value instead.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: int, none<br>
+<strong>Default</strong>: 0</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span>none
+</code></pre></div>
+</div>
+<h3 id="csv-prefix">csv-prefix</h3>
+<p>Prefix to add to column numbers when no header values are provided (i.e. when using csv-header=none).</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: string<br>
+<strong>Default</strong>: None</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span>none<span class="p">&amp;</span>csv-prefix<span class="o">=</span>col
+</code></pre></div>
+</div>
+<h3 id="csv-names">csv-names</h3>
+<p>List of column names to use. If the CSV data contains a header row you should include <code>csv-header=0</code> to override the column names. Duplicates in this list are not allowed.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: list<br>
+<strong>Default</strong>: None</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span><span class="m">0</span><span class="p">&amp;</span>csv-names<span class="o">=</span>column12,column13,column14
+</code></pre></div>
+</div>
+<h3 id="csv-usecols">csv-usecols</h3>
+<p>Return a subset of columns from the original data.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: intlist<br>
+<strong>Default</strong>: None</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-usecols<span class="o">=</span><span class="m">0</span>,2,4
+</code></pre></div>
+</div>
+<h3 id="csv-skipinitialspace">csv-skipinitialspace</h3>
+<p>Skip spaces after delimiter when parsing CSV data.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: bool<br>
+<strong>Default</strong>: false</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-skipinitialspace<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+</div>
+<h3 id="csv-skiprows">csv-skiprows</h3>
+<p>A list of line numbers to skip (0-indexed) or the number of lines to skip at the start of the file.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: intlist, int<br>
+<strong>Default</strong>: None</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<p><div class="highlight"><pre><span></span><code>/convert?csv-skiprows<span class="o">=</span><span class="m">25</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code>/convert?csv-skiprows<span class="o">=</span><span class="m">1</span>,23,45
+</code></pre></div></p>
+</div>
+<h3 id="csv-skipfooter">csv-skipfooter</h3>
+<p>Number of lines at bottom of file to skip.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: int<br>
+<strong>Default</strong>: None</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-skipfooter<span class="o">=</span><span class="m">5</span>
+</code></pre></div>
+</div>
+<h3 id="csv-keep-default-na">csv-keep-default-na</h3>
+<p>Whether or not to include the default NaN values when parsing the data.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: bool<br>
+<strong>Default</strong>: True</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-keep-default-na<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+</div>
+<h3 id="csv-skip-blank-lines">csv-skip-blank-lines</h3>
+<p>If True, skip over blank lines rather than interpreting as NaN values.</p>
+<div class="admonition info inline">
+<p class="admonition-title">Info</p>
+<p><strong>Accepts</strong>: bool<br>
+<strong>Default</strong>: True</p>
+</div>
+<div class="admonition example inline-end">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code>/convert?csv-skip-blank-lines<span class="o">=</span><span class="nb">false</span>
+</code></pre></div>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../getting-started/ruby/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ruby Quickstart" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Ruby Quickstart
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        
+          Made with
+          <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+            Material for MkDocs
+          </a>
+        
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      
+    
+  </body>
+</html>
