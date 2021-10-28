@@ -10,15 +10,15 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.3.3">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.5">
     
     
       
-        <title>/convert - MkTable API</title>
+        <title>/table - MkConvert API</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.5143246d.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.cdeb8541.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.3f5d1f46.min.css">
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#convert" class="md-skip">
+        <a href="#table" class="md-skip">
           Skip to content
         </a>
       
@@ -80,7 +80,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="MkTable API" class="md-header__button md-logo" aria-label="MkTable API" data-md-component="logo">
+    <a href=".." title="MkConvert API" class="md-header__button md-logo" aria-label="MkConvert API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -93,13 +93,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            MkTable API
+            MkConvert API
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              /convert
+              /table
             
           </span>
         </div>
@@ -167,13 +167,13 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="MkTable API" class="md-nav__button md-logo" aria-label="MkTable API" data-md-component="logo">
+    <a href=".." title="MkConvert API" class="md-nav__button md-logo" aria-label="MkConvert API" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
 
     </a>
-    MkTable API
+    MkConvert API
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -319,15 +319,17 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          /convert
+          /table
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        /convert
+        /table
       </a>
       
         
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -563,6 +565,8 @@
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
+
+
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -734,8 +738,8 @@
               
                 
                 
-                <h1 id="convert">/convert</h1>
-<p>The <code>/convert</code> endpoint accepts requests containing either CSV or JSON data and converts it to a plain text table.</p>
+                <h1 id="table">/table</h1>
+<p>The <code>/table</code> endpoint accepts requests containing either CSV or JSON data and converts it to a plain text table.</p>
 <div class="admonition warning content-type">
 <p class="admonition-title">Warning</p>
 <p>The <code>Content-Type</code> header <strong><em>must</em></strong> be sent with each request. Use <code>text/plain</code> for CSV data and <code>application/json</code> for JSON.</p>
@@ -812,7 +816,7 @@ Pikachu,Electric,25
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?table-tablefmt<span class="o">=</span>github
+<div class="highlight"><pre><span></span><code>/table?table-tablefmt<span class="o">=</span>github
 </code></pre></div>
 </div>
 <p>The available options are:</p>
@@ -851,7 +855,7 @@ Pikachu,Electric,25
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?table-numalign<span class="o">=</span>center
+<div class="highlight"><pre><span></span><code>/table?table-numalign<span class="o">=</span>center
 </code></pre></div>
 </div>
 <p>The available options are:</p>
@@ -871,7 +875,7 @@ Pikachu,Electric,25
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?table-stralign<span class="o">=</span>center
+<div class="highlight"><pre><span></span><code>/table?table-stralign<span class="o">=</span>center
 </code></pre></div>
 </div>
 <p>The available options are:</p>
@@ -891,7 +895,7 @@ to disable this behaviour.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?table-disable-numparse<span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code>/table?table-disable-numparse<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 </div>
 <h3 id="table-floatfmt">table-floatfmt</h3>
@@ -903,7 +907,7 @@ to disable this behaviour.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?table-floatfmt<span class="o">=</span>.4f
+<div class="highlight"><pre><span></span><code>/table?table-floatfmt<span class="o">=</span>.4f
 </code></pre></div>
 </div>
 <h2 id="csv-parameters">CSV Parameters</h2>
@@ -917,7 +921,7 @@ to disable this behaviour.</p>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-sep<span class="o">=</span><span class="p">|</span>
+<div class="highlight"><pre><span></span><code>/table?csv-sep<span class="o">=</span><span class="p">|</span>
 </code></pre></div>
 </div>
 <h3 id="csv-delim-whitespace">csv-delim-whitespace</h3>
@@ -930,7 +934,7 @@ Cannot be used with <code>csv-sep</code>.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-delim-whitespace<span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code>/table?csv-delim-whitespace<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 </div>
 <h3 id="csv-header">csv-header</h3>
@@ -943,7 +947,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span>none
+<div class="highlight"><pre><span></span><code>/table?csv-header<span class="o">=</span>none
 </code></pre></div>
 </div>
 <h3 id="csv-prefix">csv-prefix</h3>
@@ -955,7 +959,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span>none<span class="p">&amp;</span>csv-prefix<span class="o">=</span>col
+<div class="highlight"><pre><span></span><code>/table?csv-header<span class="o">=</span>none<span class="p">&amp;</span>csv-prefix<span class="o">=</span>col
 </code></pre></div>
 </div>
 <h3 id="csv-names">csv-names</h3>
@@ -967,7 +971,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-header<span class="o">=</span><span class="m">0</span><span class="p">&amp;</span>csv-names<span class="o">=</span>column12,column13,column14
+<div class="highlight"><pre><span></span><code>/table?csv-header<span class="o">=</span><span class="m">0</span><span class="p">&amp;</span>csv-names<span class="o">=</span>column12,column13,column14
 </code></pre></div>
 </div>
 <h3 id="csv-usecols">csv-usecols</h3>
@@ -979,7 +983,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-usecols<span class="o">=</span><span class="m">0</span>,2,4
+<div class="highlight"><pre><span></span><code>/table?csv-usecols<span class="o">=</span><span class="m">0</span>,2,4
 </code></pre></div>
 </div>
 <h3 id="csv-skipinitialspace">csv-skipinitialspace</h3>
@@ -991,7 +995,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-skipinitialspace<span class="o">=</span><span class="nb">true</span>
+<div class="highlight"><pre><span></span><code>/table?csv-skipinitialspace<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 </div>
 <h3 id="csv-skiprows">csv-skiprows</h3>
@@ -1003,9 +1007,9 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<p><div class="highlight"><pre><span></span><code>/convert?csv-skiprows<span class="o">=</span><span class="m">25</span>
+<p><div class="highlight"><pre><span></span><code>/table?csv-skiprows<span class="o">=</span><span class="m">25</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>/convert?csv-skiprows<span class="o">=</span><span class="m">1</span>,23,45
+<div class="highlight"><pre><span></span><code>/table?csv-skiprows<span class="o">=</span><span class="m">1</span>,23,45
 </code></pre></div></p>
 </div>
 <h3 id="csv-skipfooter">csv-skipfooter</h3>
@@ -1017,7 +1021,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-skipfooter<span class="o">=</span><span class="m">5</span>
+<div class="highlight"><pre><span></span><code>/table?csv-skipfooter<span class="o">=</span><span class="m">5</span>
 </code></pre></div>
 </div>
 <h3 id="csv-keep-default-na">csv-keep-default-na</h3>
@@ -1029,7 +1033,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-keep-default-na<span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><pre><span></span><code>/table?csv-keep-default-na<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 </div>
 <h3 id="csv-skip-blank-lines">csv-skip-blank-lines</h3>
@@ -1041,7 +1045,7 @@ will use its index as a header value instead.</p>
 </div>
 <div class="admonition example inline-end">
 <p class="admonition-title">Example</p>
-<div class="highlight"><pre><span></span><code>/convert?csv-skip-blank-lines<span class="o">=</span><span class="nb">false</span>
+<div class="highlight"><pre><span></span><code>/table?csv-skip-blank-lines<span class="o">=</span><span class="nb">false</span>
 </code></pre></div>
 </div>
                 
@@ -1119,7 +1123,7 @@ will use its index as a header value instead.</p>
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.8397ff9e.min.js", "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.f89c2efe.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e84347e.min.js"></script>
       
     
   </body>
